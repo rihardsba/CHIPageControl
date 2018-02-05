@@ -44,14 +44,42 @@ import UIKit
     open var currentPage: Int {
         return Int(round(progress))
     }
-    
-    
+
     @IBInspectable open var padding: CGFloat = 5 {
         didSet {
             setNeedsLayout()
             update(for: progress)
         }
     }
+
+    // Active only in Ghost
+
+    @IBInspectable open var activeIndicatorBackgroundColor: UIColor? {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    @IBInspectable open var activeIndicatorRadius: CGFloat = 10 {
+        didSet {
+            setNeedsLayout()
+            update(for: progress)
+        }
+    }
+
+    @IBInspectable open var activeIndicatorBorderWidth: CGFloat = 0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    @IBInspectable open var activeIndicatorBorderColor: UIColor? {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    //
     
     @IBInspectable open var radius: CGFloat = 10 {
         didSet {
